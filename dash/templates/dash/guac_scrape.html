@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Guac - Scrape</title>
+
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="{% static 'dash/scrape.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dash/awesome_bootstrap_checkbox.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css ">
+	<link rel="shortcut icon" href="{% static 'dash/favicon.ico' %}"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> 	
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="{% static 'dash/guac_scrape.js' %}"></script>
+</head>
+<body>
+
+<a href="/dash/logout/">Logout</a><br/>
+
+{% if user.is_authenticated %}
+<h1> Guac: {{user.username }}</h1>
+{% endif %}
+
+
+<div class="container">
+	
+	<form role="form">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="radio">
+					<input type="radio" name="src_radio" value="scrape" id="scrape_radio">
+					<label for="scrape_radio">
+						Scrape From Factiva
+					</label>
+
+				</div>
+			</div>
+
+			<div class="panel-body", id="scrape_body">
+				<div class="radio">
+					<input type="radio" name="query_radio" value="build" id="build_radio" checked>
+					<label for="build_radio">
+						Build TUFF Query
+					</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="query_radio" id="manual_radio" value="manual">
+					<label for="manual_radio">
+						Manual Query
+					</label>
+				</div>
+
+				<div id="build_form">
+					<input type="text" class="form-control" placeholder="Donor Country">
+					<input type="text" class="form-control" placeholder="Recipient Country">
+				</div>
+
+				<div id="manual_form">
+					<textarea class="form-control" rows="3" id="query_input" placeholder="Query"></textarea>		
+				</div>
+
+				<div class="radio">
+					<input type="radio" name="scrape_radio" value="now" id="now_radio" checked>
+					<label for="now_radio">
+						Scrape Now
+					</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="scrape_radio" value="schedule" id="schedule_radio">
+					<label for="schedule_radio">
+						Schedule Scrape
+					</label>
+				</div>
+				<div id="now_form">
+					<input type="text" class="form-control" placeholder="Start Date   DD-MM-YYYY" id="freq_input">
+					<input type="text" class="form-control" placeholder="End Date    DD-MM-YYYY" id="s">
+				</div>
+				<div id="schedule_form">
+					<input type="text" class="form-control" placeholder="Frequency in Days" id="freq_input">
+					<input type="text" class="form-control" placeholder="Delay in Days" id="rec_input">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="radio">
+					<input type="radio" value="upload" name="src_radio" id="upload_radio"> 
+					<label for="upload_radio">
+						Upload Articles
+					</label>
+				</div>
+			</div>
+
+			<div class="panel-body", id="upload_body">
+			</div>
+		</div>
+
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="checkbox">
+					<input type="checkbox" id="classify_check">
+					<label for="classify_check">Classify</label>
+				</div>
+			</div>
+
+			<div class="panel-body", id="classify_body">
+				<div class="well">
+					<div class="form-inline">
+						<select class="form-control">
+							<option value="" selected disabled>Classifier</option>
+							<option>TUFF</option>
+							<option>Gender</option>
+							<option>Conflict</option>
+						</select>
+						<select  class="form-control">
+							<option value="" selected disabled>Desired Class</option>
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+						<a class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</a>
+					</div>
+					<button type='button' class="btn btn-default" id="add_class"><i class="fa fa-plus"></i>  Add Classifier</button>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="checkbox">
+					<input type="checkbox" id="activity_check">
+					<label for="activity_check">Activity Code</label>
+				</div>
+			</div>
+
+			<div class="panel-body", id="activity_body">
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="checkbox">
+					<input type="checkbox" id="sdg_check">
+					<label for="sdg_check">SDG Code</label>
+				</div>
+			</div>
+
+			<div class="panel-body", id="sdg_body">
+			</div>
+		</div>
+
+	
+	</form>
+
+</div>
+
+</body>
+</html>
