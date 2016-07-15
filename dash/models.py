@@ -7,8 +7,10 @@ class UserProfile(models.Model):
 	# Links UserProfile to a User model instance
 	user = models.OneToOneField(User)
 	# The additional attributes we wish to include.
-	name = models.CharField(max_length=30)
+	first_name = models.CharField(max_length=30)
+	last_name = models.CharField(max_length=30)
 	picture = models.ImageField(upload_to='profile_images', blank=True)
+	isAdmin = models.BooleanField(default=False)
 
 	# Override the __unicode__() method to return out something actually meaningful
 	def __unicode__(self):

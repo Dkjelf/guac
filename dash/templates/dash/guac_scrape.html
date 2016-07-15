@@ -17,11 +17,9 @@
 <body>
 
 <a href="/dash/logout/">Logout</a><br/>
+<a href="/dash/profile/">Profile</a><br/>
 
-{% if user.is_authenticated %}
-<h1> Guac: {{user.username }}</h1>
-{% endif %}
-
+<h1> Guac: {{ user.username }}</h1>
 
 <div class="container">
 	
