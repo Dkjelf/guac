@@ -44,6 +44,9 @@ def index(request):
 	
 	return render(request, 'dash/guac_scrape.html')
 
+def about(request):
+	return render(request, 'dash/about.html')
+
 def register(request):
 	# Like before, get the request's context.
 	context = RequestContext(request)

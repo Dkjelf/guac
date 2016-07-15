@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Guac - Scrape</title>
+{% extends 'dash/base.html' %}
 
-	<meta charset="utf-8">
-	{% load staticfiles %}
+{% block body_block %}
+{% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="{% static 'dash/scrape.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'dash/awesome_bootstrap_checkbox.css' %}">
 	<link rel="stylesheet" type="text/css" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css ">
-	<link rel="shortcut icon" href="{% static 'dash/favicon.ico' %}"> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> 	
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="{% static 'dash/guac_scrape.js' %}"></script>
-</head>
-<body>
-
-<a href="/dash/logout/">Logout</a><br/>
-<a href="/dash/profile/">Profile</a><br/>
-
-<h1> Guac: {{ user.username }}</h1>
-
-<div class="container">
+<div class="hero-unit">
 	
 	<form role="form">
 
@@ -159,5 +146,5 @@
 
 </div>
 
-</body>
-</html>
+
+{% endblock %}

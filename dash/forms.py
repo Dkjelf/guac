@@ -3,14 +3,20 @@ from django.contrib.auth.models import User
 from django import forms
 
 class UserForm(forms.ModelForm):
-	password = forms.CharField(widget=forms.PasswordInput())
+	username = forms.CharField(help_text="Enter a username.")
+	email = forms.CharField(help_text="Enter your email.")
+	password = forms.CharField(widget=forms.PasswordInput(), help_text="Enter a password.")
 
 	class Meta:
 		model = User
-		fields = ('username', 'email', 'password')
+		fields = ['username', 'email', 'password']
 		
 class UserProfileForm(forms.ModelForm):
+	first_name = forms.CharField(help_text="Enter your first name.")
+	last_name = forms.CharField(help_text="Enter your last name.")
+	picture = forms.ImageField(help_text="Select a profile image", required=False)
+
 	class Meta:
 		model = UserProfile
-		fields = ('first_name', 'last_name', 'picture')
+		fields = ['first_name', 'last_name', 'picture']
  
