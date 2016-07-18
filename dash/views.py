@@ -45,6 +45,7 @@ def index(request):
 	return render(request, 'dash/guac_scrape.html')
 
 def about(request):
+	# Displays the about page
 	return render(request, 'dash/about.html')
 
 def register(request):
@@ -137,6 +138,7 @@ def user_logout(request):
 @login_required
 def get_user_profile(request):
 	context = RequestContext(request)
+	context_dict = {}
 	u = User.objects.get(username = request.user)
 
 	try:
@@ -144,5 +146,6 @@ def get_user_profile(request):
 	except:
 		up = None	
 	
-	context_dict = {'user':u, 'userprofile':up}
-	return render('dash/user_profile.html', context_dict, context)
+	context_dict['user'] = u
+	context_dict['userprofile'] = up
+	return render_to_response('dash/user_profile.html', context_dict, context)
