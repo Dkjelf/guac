@@ -12,11 +12,11 @@ class UserForm(forms.ModelForm):
 		fields = ['username', 'email', 'password']
 		
 class UserProfileForm(forms.ModelForm):
-	first_name = forms.CharField(help_text="Enter your first name.")
-	last_name = forms.CharField(help_text="Enter your last name.")
+	first = forms.CharField(help_text="Enter your first name.")
+	last = forms.CharField(help_text="Enter your last name.")
 	picture = forms.ImageField(help_text="Select a profile image", required=False)
 
 	class Meta:
 		model = UserProfile
-		fields = ['first_name', 'last_name', 'picture']
+		fields = ['first', 'last', 'picture']
  

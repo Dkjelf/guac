@@ -16,7 +16,7 @@ def index(request):
 
 	# Cookie information
 	# Obtain the response object early to add cookie information
-	response = render_to_response('dash/guac_scrape.html', context)
+	response = render(request, 'dash/guac_scrape.html', context)
 
 	# Get the number of visits to the site
 	visits = int(request.COOKIES.get('visits', '0'))
@@ -82,7 +82,7 @@ def register(request):
 			# Update variable to confirm that the user is registered
 			registered = True
 	
-			return render_to_response('dash/login.html', {}, context)
+			return render(request, 'dash/login.html', context)
 		# Invalid form or forms with mistakes
 		# Prints the errors to terminal and shows it to the user
 		else:
@@ -94,7 +94,7 @@ def register(request):
 		profile_form = UserProfileForm()
 
 	# Render the template depending on the context
-	return render_to_response(
+	return render(request,
 		'dash/register.html',
 		{'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
 		 context)
@@ -119,15 +119,15 @@ def user_login(request):
 				return HttpResponseRedirect('/dash/')
 			else:
 				# Responds to an inactive account
-				return HttpResponse("This Guac account is disabled.")
+				return HttpResponse("This Guac acccount is inactive. Please contact an administrator.")
 		else:
 			# Bad login details
 			print "Invalid login details: {0}, {1}".format(username, password)
-			return HttpResponse("Invalid login details")
+			return HttpResponse("Invalid login details, try again.")
 	# This request is not an HTTP POST, so display the form
 	else: 
 		# No Context variables to pass the template system
-		return render_to_response('dash/login.html', {}, context)
+		return render(request, 'dash/login.html', context)
 		
 	
 @login_required
@@ -148,4 +148,4 @@ def get_user_profile(request):
 	
 	context_dict['user'] = u
 	context_dict['userprofile'] = up
-	return render_to_response('dash/user_profile.html', context_dict, context)
+	return render(request,'dash/user_profile.html', context_dict, context)

@@ -7,8 +7,8 @@ class UserProfile(models.Model):
 	# Links UserProfile to a User model instance
 	user = models.OneToOneField(User)
 	# The additional attributes we wish to include.
-	first_name = models.CharField(max_length=30)
-	last_name = models.CharField(max_length=30)
+	first = models.CharField(max_length=30)
+	last = models.CharField(max_length=30)
 	picture = models.ImageField(upload_to='profile_images', blank=True)
 	isAdmin = models.BooleanField(default=False)
 

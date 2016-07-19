@@ -1,13 +1,13 @@
 {% extends 'dash/base.html' %}
-
 {% block body_block %}
+
 {% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="{% static 'dash/awesome_bootstrap_checkbox.css' %}"/>
 	<link rel="stylesheet" type="text/css" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css "/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> 	
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="{% static 'dash/guac_scrape.js' %}"></script>
+
 <div class="hero-unit">
 	
 	<form role="form">
@@ -17,7 +17,8 @@
 				<div class="radio">
 					<input type="radio" name="src_radio" value="scrape" id="scrape_radio">
 					<label for="scrape_radio">
-						Scrape from Factiva
+						<strong>Scrape from Factiva
+						</strong>
 
 					</label>
 
@@ -25,6 +26,7 @@
 			</div>
 
 			<div class="panel-body", id="scrape_body">
+				<div class="well">
 				<div class="radio">
 					<input type="radio" name="query_radio" value="build" id="build_radio" checked>
 					<label for="build_radio">
@@ -67,6 +69,7 @@
 					<input type="text" class="form-control" placeholder="Frequency in Days" id="freq_input">
 					<input type="text" class="form-control" placeholder="Delay in Days" id="rec_input">
 				</div>
+				</div>
 			</div>
 		</div>
 
@@ -76,12 +79,14 @@
 				<div class="radio">
 					<input type="radio" value="upload" name="src_radio" id="upload_radio"> 
 					<label for="upload_radio">
-						Upload Articles
+						<strong>Upload Articles</strong>
 					</label>
 				</div>
 			</div>
 
 			<div class="panel-body", id="upload_body">
+			<div class="well">
+			</div>
 			</div>
 		</div>
 
@@ -90,7 +95,7 @@
 			<div class="panel-heading">
 				<div class="checkbox">
 					<input type="checkbox" id="classify_check">
-					<label for="classify_check">Classify</label>
+					<label for="classify_check"><strong>Classify</strong></label>
 				</div>
 			</div>
 
@@ -120,11 +125,13 @@
 			<div class="panel-heading">
 				<div class="checkbox">
 					<input type="checkbox" id="activity_check">
-					<label for="activity_check">Activity Code</label>
+					<label for="activity_check"><strong>Activity Code</strong></label>
 				</div>
 			</div>
 
 			<div class="panel-body", id="activity_body">
+			<div class="well">
+			</div>
 			</div>
 		</div>
 
@@ -133,11 +140,13 @@
 			<div class="panel-heading">
 				<div class="checkbox">
 					<input type="checkbox" id="sdg_check">
-					<label for="sdg_check">SDG Code</label>
+					<label for="sdg_check"><strong>SDG Code</strong></label>
 				</div>
 			</div>
 
 			<div class="panel-body", id="sdg_body">
+			<div class="well">
+			</div>
 			</div>
 		</div>
 
