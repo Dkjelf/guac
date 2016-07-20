@@ -1,7 +1,7 @@
 {% extends 'dash/base.html' %}
 {% block body_block %}
 <div class="hero-unit">
-	<h1>Login to Guac</h1><br/>
+	<h1>Login</h1><br/>
 	<div class="container"> 
 	<form class="form-signin span4" id="login_form" method="post" action="/dash/login/">
 		<h2 class="form-signin-heading">Please sign in</h2>
@@ -13,15 +13,13 @@
 		<p><strong>Your Guac account is currently disabled; contact an adminstrator.</strong></p>
 		{% endif %}
 
-		Username: <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="50" />
+		<input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="30" />
 		<br />
-		Password: <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="50" />
+		<input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="30" />
 		<br />
 		<button class="btn btn-primary" type="submit">Sign in</button>
-	</form>
-	
-	<a href="/dash/register/"> New User?</a>
-	
+		<a href="/dash/register/"> New User?</a>
+		</form>	
 	</div>
 	<!-- /container -->
 </div>

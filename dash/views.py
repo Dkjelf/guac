@@ -44,6 +44,11 @@ def index(request):
 	
 	return render(request, 'dash/guac_scrape.html')
 
+def home(request):
+	# Displays the home page
+	return render(request, 'dash/home.html')
+
+
 def about(request):
 	# Displays the about page
 	return render(request, 'dash/about.html')
