@@ -1,6 +1,6 @@
 {% extends 'dash/base.html' %}
 {% block body_block %}
-<div class="hero-unit">
+<!--<div id="login">
 	<h1>Login</h1><br/>
 	<div class="container"> 
 	<form class="form-signin span4" id="login_form" method="post" action="/dash/login/">
@@ -21,6 +21,21 @@
 		<a href="/dash/register/"> New User?</a>
 		</form>	
 	</div>
-	<!-- /container -->
+<
+-->
+{% load staticfiles %}
+<link href="{% static 'css/login.css'%}" rel="stylesheet">
+<div id="login">
+	<h2>          Sign In</h2>
+	
+	<form action="/dash/login/" method="POST">
+		{% csrf_token %}	
+		<fieldset>
+		<p><label for="text">Username</label></p><p><input type="text" name="username" value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value=''"></p>
+		<p><label for="password">Password</label></p><input type="password" name="password" value="password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='password')this.value=''"></p>
+		<p><input type="submit" value="Sign In"></p>
+		<p><a href="/dash/register/">New User?</a>
+		</fieldset>
+	</form>
 </div>
 {% endblock %}

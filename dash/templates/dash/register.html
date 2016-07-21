@@ -1,40 +1,33 @@
 {% extends 'dash/base.html' %}
 <html>
 {% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
 <body>
-	<div class="hero-unit">
-		<h1>Register with Guac</h1>
-		<br />
-
-		<div class="container">
-			{% if registered %}
-			<p>Thank you for registering.</p>
-		
-			<p><a href="/dash/login/">Login</a> </p>
-			{% else %}
-			<form class="form-signin span8" id="user_form" method="post" action="/dash/register/" enctype="multipart/form-data">
-			{% csrf_token %}
-			<h2 class="form-signin-heading">Sign up Here</h2>
-
+	<form action="/dash/register/" method="POST" enctype="multipart/form-data">
+		<h1>Register</h1>
+		<fieldset>
+			<legend><span class="number">1</span>Account Information</legend>
 			<!-- Display each form here -->
-			
+			{% csrf_token %}			
 			{% for field in user_form.visible_fields %}
 			{{ field.errors }}
 			{{ field.help_text }}<br />
 			{{ field }}<br />
 			{% endfor %}
-
+			</fieldset>
+			<fieldset>
+			<legend><span class="number">2</span>Personal Information</legend>
 			{% for field in profile_form.visible_fields %}
 			{{ field.errors }}
 			{{ field.help_text }}<br />
 			{{ field }}<br />
 			{% endfor %}
-
+			</fieldset>
 			<br />
 			<!--Provide a button to click to submit the form. -->
-			<input class="btn btn-primary" type="submit" value="Register"/>
+			<button type="submit">Sign Up</button>
 		</form>
-		{% endif %}
 	</div>
 </div>
 {% endblock %}
