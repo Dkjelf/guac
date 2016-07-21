@@ -4,6 +4,11 @@
     margin-right: 150px;
 }
 
+body{
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
 #add_class {
     width: 345px;
 }

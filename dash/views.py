@@ -53,6 +53,19 @@ def about(request):
 	# Displays the about page
 	return render(request, 'dash/about.html')
 
+def FAQs(request):
+	# Displays Frequently Asked Questions page
+	return render(request, 'dash/FAQs.html')
+
+def history(request):
+	# Displays History page
+	return render(request, 'dash/history.html')
+
+def contact(request):
+	# Displays the contact page
+	return render(request, 'dash/contact.html')
+
+
 def register(request):
 	# Like before, get the request's context.
 	context = RequestContext(request)
@@ -83,7 +96,7 @@ def register(request):
 
 			# Now save the UserProfile model instance
 			profile.save()
-
+			
 			# Update variable to confirm that the user is registered
 			registered = True
 	
@@ -142,15 +155,6 @@ def user_logout(request):
 
 @login_required
 def get_user_profile(request):
-	context = RequestContext(request)
-	context_dict = {}
-	u = User.objects.get(username = request.user)
+	u = User.objects.get(username=request.user)
 
-	try:
-		up = UserProfile.objects.get(user=u)	
-	except:
-		up = None	
-	
-	context_dict['user'] = u
-	context_dict['userprofile'] = up
-	return render(request,'dash/user_profile.html', context_dict, context)
+	return render(request,'dash/user_profile.html', {'user':u})
