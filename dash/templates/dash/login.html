@@ -1,33 +1,17 @@
 {% extends 'dash/base.html' %}
 {% block body_block %}
-<!--<div id="login">
-	<h1>Login</h1><br/>
-	<div class="container"> 
-	<form class="form-signin span4" id="login_form" method="post" action="/dash/login/">
-		<h2 class="form-signin-heading">Please sign in</h2>
-		{% csrf_token %}
-
-		{% if invalid_login %}
-		<p><strong>Your username and/or password were incorrect</strong></p>
-		{% elif disabled_account %}
-		<p><strong>Your Guac account is currently disabled; contact an adminstrator.</strong></p>
-		{% endif %}
-
-		<input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="30" />
-		<br />
-		<input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="30" />
-		<br />
-		<button class="btn btn-primary" type="submit">Sign in</button>
-		<a href="/dash/register/"> New User?</a>
-		</form>	
-	</div>
-<
--->
 {% load staticfiles %}
 <link href="{% static 'css/login.css'%}" rel="stylesheet">
 <div id="login">
-	<h2>          Sign In</h2>
-	
+	<h2>Sign In</h2>
+
+	{% if form.non_field_errors %}
+		<ul class='form-errors'>
+			{% for error in form.non_field_errors %}
+				<li> {{ error }} </li>
+			{% endfor %}
+		</ul>
+	{% endif %}	
 	<form action="/dash/login/" method="POST">
 		{% csrf_token %}	
 		<fieldset>

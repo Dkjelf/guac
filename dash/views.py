@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from datetime import datetime
-from .forms import UserForm, UserProfileForm
+from .forms import UserForm, UserProfileForm, LoginForm
 
 @login_required
 def index(request):
@@ -119,33 +119,15 @@ def register(request):
 
 def user_login(request):
 	#obtain context
-	context = RequestContext(request)
-
+	form = LoginForm(request.POST or None)
 	# If the request is an HTTP POST, try to pull out the relevant information
-	if request.method == "POST":
+	if request.POST and form.is_valid():
 		# Gather the username and password provided by the user
-		username = request.POST['username']
-		password = request.POST['password']
-
-		# Authenticate if the username/password combo is valid
-		user = authenticate(username=username, password=password)
-
+		user = form.login(request)
 		if user:
-			# Check if the account is active
-			if user.is_active:
-				login(request, user)
-				return HttpResponseRedirect('/dash/')
-			else:
-				# Responds to an inactive account
-				return HttpResponse("This Guac acccount is inactive. Please contact an administrator.")
-		else:
-			# Bad login details
-			print "Invalid login details: {0}, {1}".format(username, password)
-			return HttpResponse("Invalid login details, try again.")
-	# This request is not an HTTP POST, so display the form
-	else: 
-		# No Context variables to pass the template system
-		return render(request, 'dash/login.html', context)
+			login(request, user)
+			return HttpResponseRedirect('/dash/') # Redirects to main page
+	return render(request, 'dash/login.html', {'form':form})
 		
 	
 @login_required

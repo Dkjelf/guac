@@ -2,17 +2,17 @@
 {% block body_block %}
 
 {% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="{% static 'dash/awesome_bootstrap_checkbox.css' %}"/>
-	<link rel="stylesheet" type="text/css" href="{% static 'dash/scrape.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/awesome_bootstrap_checkbox.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/scrape.css' %}"/>
 	<link rel="stylesheet" type="text/css" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css "/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> 	
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="{% static 'dash/guac_scrape.js' %}"></script>
-
+	<script src="{% static 'js/guac_scrape.js' %}"></script>
+	
 <div class="hero-unit">
 	
 	<form role="form">
-		<div id="divleft">
+		<legend><span class="number">1</span>Input Source</legend>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="radio">
@@ -66,9 +66,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
 
-		<div id="divright">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="radio">
@@ -84,9 +82,8 @@
 			</div>
 			</div>
 		</div>
-		</div>
 
-		
+		<legend><span class="number">2</span>Data Manipulation</legend>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="checkbox">

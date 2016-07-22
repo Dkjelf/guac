@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url, patterns
 from django.core.urlresolvers import reverse
 from django.views.generic.base import RedirectView
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = [
 	url(r'^$', RedirectView.as_view(url='/dash')),
 	url(r'^dash/', include('dash.urls')),
+	url(r'^admin/', include(admin.site.urls)),
 ]
