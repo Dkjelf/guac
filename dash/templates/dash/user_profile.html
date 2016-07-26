@@ -1,0 +1,15 @@
+{% extends 'dash/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body_block %}
+	<h1> Profile </h1><br/>
+	<h2>{{ user.username }}</h2>
+	<p>Email: {{ user.email }}</p>
+
+	{{ user.first_name }} 
+	{{ user.last_name }} <br/>
+	{% if user.picture %}
+		<img src="{{ user.picture }}" />
+	{% endif %}
+{% endblock %}

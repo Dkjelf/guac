@@ -1,0 +1,38 @@
+.container {
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 700px;
+}
+
+body{
+	margin-left: 150px;
+	margin-right: 700px;
+}
+
+#add_class {
+    width: 345px;
+}
+
+legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.number {
+	background-color: #00ffff;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size 0.8em;
+	font-family: 'Lobster', cursive;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	border-radius: 100%;
+}
+
+.form-inline {
+	padding-bottom: 10px;
+}

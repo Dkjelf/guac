@@ -1,0 +1,17 @@
+{% extends 'dash/base.html' %}
+<html>
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+<body>
+	<div class="">	
+	<h1>Contact Us</h1>
+	<form>	
+		<input type="text" name="name" placeholder="Your Name" />
+		<input type="email" name="email" placeholder="Email Address" />
+		<textarea name="text" placeholder="Type your Message"></textarea>
+		<button type="submit">Send</button>
+	</form>
+	</div>
+{% endblock %}
+</html>

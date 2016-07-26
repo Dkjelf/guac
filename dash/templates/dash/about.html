@@ -1,0 +1,21 @@
+{% extends 'dash/base.html' %}
+{% block body_block %}
+{% load static %}
+<link href="{% static 'css/about.css'%}" rel="stylesheet"> 
+
+<div class="about-block">
+	<h1>About AQUA</h1>
+	This project, codenamed Guac, is still in development and is projected to be complete by May 2017.
+	<h2>Overview</h2>
+	Data collection can be a long and arduous process. Data often comes in messy, unstructured, unwieldy, and unrefined forms. Data at AidData, while available, is often hard to find. There is no simple service that could be used to filter projects by activity code, SDG code, and/or precision code. While all the data exists in geocoded datasets and online databases, it requires technical knowledge to find and access. This site should serve as the solution to that. This is a Decision-Support tool (DST) designed to combine the functionality of AidData's automated activity coder, AidData's automated Sustainable Development Goal coder, and AidData's automated Factiva data scraper and classifier. This site should be easy to use and allows for the creation of very specific queries without complicated code or query syntax. <br />
+	Aiddata has many tools at its disposal, yet they are hard to access without techical knowledge. Take as an example, finding data on Russian foreign aid to Timor-Leste. It would involve typing technical, strictly-syntactic queries or using complicated console commands into a Linux terminal. The previous format was neither intuitive nor easy to memorize. Once that data was gathered, the user would have to use another tool to parse through the massive amount of information provided. This DST is designed to make the process simpler and more efficient by simplifing user interaction and automating the more complicated functions.  <br />
+	<h2>Functions</h2>
+	Simplifies queries on Factivia. <br />
+	Runs machine learning algorithms to refine results. <br />
+	Uses automated activity coding to assign activity codes to articles. <br/>
+	Uses automated Sustainable Development Coder to assign articles SDG codes. <br/>
+	<h2>Team Biography</h2>
+	Each member of the team was a Research Assistant on the Data Team at AidData in Summer 2016. Dan Jelf is a Junior at the College of William and Mary studying Computer Science. He specializes in front end user interface development and server configuration. Nadia Aly is a graduate from the College with a Bachelors in Applied Mathematics, and will be enrolled in the Master of Computer Science graduate program 2016-17. She specilizes in the complex machine learning algorithms used in AidData's tools. Ivan Echevarria is a Junior at the College studying Computer Science and Mathematics. Ivan has the most experience working with the TUFF Robot and data scraping, as well as front end styling.  
+
+</div>
+{% endblock %}
