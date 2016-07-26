@@ -95,8 +95,7 @@ def register(request):
 				profile.picture = request.FILES['picture']
 
 			# Now save the UserProfile model instance
-			profile.save()
-			
+			profile.save()			
 			# Update variable to confirm that the user is registered
 			registered = True
 	
