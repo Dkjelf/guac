@@ -1,0 +1,84 @@
+@charset "UTF-8";
+body {
+padding-top: 60px;
+padding-bottom: 40px;
+font-family: 'Raleway', sans-serif;
+font-size: 14px;
+}
+
+.sidebar-nav {
+padding: 9px 0;
+}
+
+@media (max-width:767px){
+	/* enabled use of floated navbar text */
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #000000;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #e2e2e2;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #e2e2e2;
+		background-color: #00cccc;
+	}
+}
+
+.navbar-default {
+	border-color: #00FFFF;
+	font-family: 'Bungee', cursive;
+	font-size: 16px;
+}
+.navbar-default .navbar-brand {
+	color: #000000;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	color:#00cccc;
+}
+.navbar-default .navbar-text {
+	color: #000000;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #000000;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #e2e2e2;
+	background-color: #00FFFF;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #e2e2e2;
+	background-color: #00FFFF;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #e2e2e2;
+	background-color: #00FFFF;
+}
+.navbar-default .navbar-toggle {
+	border-color: #00FFFF;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color #00FFFF;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #000000;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #000000;
+}
+.navbar-default .navbar-link {
+	color: #000000;
+}
+.navbar-default .navbar-link:hover {
+	color:#000000;
+}
